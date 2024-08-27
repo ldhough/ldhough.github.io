@@ -9,12 +9,3 @@ location: "College Park, Maryland"
 ---
 
 Holding office hours and discussion sections for course material (mostly C & x86 assembly).
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
