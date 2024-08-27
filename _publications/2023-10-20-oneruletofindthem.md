@@ -2,8 +2,8 @@
 title: "OneRuleToFindThem: Efficient Automated Generation of Password Cracking Rules"
 collection: publications
 category: manuscripts
-permalink: /publication/2023-10-20-oneruletofindthem.md
-excerpt: 'Generating hashcat rules for efficient password cracking.'
+permalink: /publication/2023-10-20-oneruletofindthem
+excerpt: 'Generating hashcat rules for efficient password cracking. Awarded best research paper at CCSC Eastern.'
 date: "October 2023"
 venue: 'The Journal of Computing Sciences in Colleges'
 #slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
