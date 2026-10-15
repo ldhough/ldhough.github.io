@@ -33,6 +33,12 @@
         <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
+
+    {% if post.collection == 'publications' and post.authors %}
+      <p class="archive__item-authors">
+        {% for author in post.authors %}{% unless forloop.first %}, {% endunless %}<span{% if author == "Lannie Dalton Hough" %} class="is-me"{% endif %}>{{ author }}</span>{% endfor %}
+      </p>
+    {% endif %}
     
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</p>
@@ -41,7 +47,11 @@
         {% if post.collection == 'teaching' %}
           <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif post.collection == 'publications' %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+          {% if post.publication_status %}
+            <p class="publication-venue"><span class="publication-status">{{ post.publication_status }}</span><span><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span></p>
+          {% else %}
+            <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
+          {% endif %}
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}

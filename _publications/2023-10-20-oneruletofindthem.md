@@ -5,6 +5,10 @@ permalink: /publication/2023-10-20-oneruletofindthem
 excerpt: 'Generating hashcat rules for efficient password cracking. Awarded best research paper at CCSC Eastern.'
 date: "October 2023"
 venue: 'The Journal of Computing Sciences in Colleges'
+authors:
+  - "Joshua Eckroth"
+  - "Lannie Dalton Hough"
+  - "Hala ElAarag"
 #slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'https://www.ccsc.org/publications/journals/EA2023.pdf'
 citation: "J. Eckroth, L. Hough, H. ElAarag. OneRuleToFindThem: Efficient Automated Generation of Password Cracking Rules. CCSC Eastern 2023."

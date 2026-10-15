@@ -162,6 +162,8 @@ h1, h2, h3, h4, h5, h6 {
 .archive__item-title { margin-top: .35rem; font-size: 1.2rem; line-height: 1.35; }
 .archive__item-title a { color: var(--text-bright); text-decoration: none; }
 .archive__item p { color: var(--text); font-size: .85rem; }
+.archive__item-authors { font-family: "SFMono-Regular", Consolas, monospace; line-height: 1.55; }
+.archive__item-authors .is-me { color: var(--acid) !important; }
 .archive__item p:last-child { margin-bottom: 0; }
 .archive hr { display: none; }
 
@@ -176,6 +178,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn:hover { color: var(--void) !important; background: var(--cyan); box-shadow: 6px 6px 0 rgba(255,60,172,.35); }
 .paper-links { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.publication-venue { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+.publication-status { display: inline-block; padding: .18rem .42rem; color: var(--acid); border: 1px solid rgba(198,255,61,.5); font-family: "SFMono-Regular", Consolas, monospace; font-size: .65rem; font-style: normal; font-weight: 700; letter-spacing: .1em; line-height: 1.2; text-transform: uppercase; }
 
 .page__footer {
   color: var(--muted);
@@ -240,6 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-card:hover { transform: translateX(6px); border-color: var(--cyan); text-shadow: none; }
 .project-year { display: flex; flex-wrap: wrap; gap: .25rem .65rem; color: var(--magenta); font-size: .72rem; letter-spacing: .14em; }
 .project-year span { white-space: nowrap; }
+.project-year .project-status { color: var(--acid); }
 .project-card h3 { margin: 0 0 .45rem; color: var(--text-bright); font-size: 1.1rem; line-height: 1.35; }
 .project-card p { margin: 0; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: .86rem; }
 .project-card .project-authors { margin-bottom: .5rem; font-family: "SFMono-Regular", Consolas, monospace; font-size: .68rem; line-height: 1.55; }

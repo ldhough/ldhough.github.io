@@ -51,7 +51,7 @@ layout: default
         {% assign featured = site.publications | where: "featured", true | sort: "date" | reverse %}
         {% for post in featured %}
           <a class="project-card" href="{{ base_path }}{{ post.url }}">
-            <span class="project-year"><span>{{ post.shortvenue }}</span><span>{{ post.date | date: "%Y" }}</span></span>
+            <span class="project-year"><span>{{ post.shortvenue }}</span>{% if post.publication_status %}<span class="project-status">{{ post.publication_status }}</span>{% endif %}<span>{{ post.date | date: "%Y" }}</span></span>
             <span>
               <h3>{{ post.title }}</h3>
               {% if post.authors %}
