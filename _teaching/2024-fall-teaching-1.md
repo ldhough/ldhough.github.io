@@ -8,4 +8,4 @@ date: 2024-08-19
 location: "College Park, Maryland"
 ---
 
-Holding office hours and discussion sections for course material (mostly C & x86 assembly).
+Held office hours and discussion sections covering C, x86 assembly, memory, and core systems concepts. See the [course website](https://www.cs.umd.edu/class/fall2024/cmsc216-030X/) for details.

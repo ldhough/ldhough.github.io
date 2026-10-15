@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+{% include base_path %}
+<main class="home-main">
+  <div class="home-shell">
+    <section class="home-hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="system-tag">PhD student at the University of Maryland</div>
+        <p class="hero-kicker">HPC / ML SYS / SPARSE AND IRREGULAR PROBLEMS</p>
+        <h1 class="glitch-title" id="hero-title"><span>Lannie</span><strong>Dalton</strong><span>Hough</span></h1>
+        <p class="hero-deck">I am a Computer Science PhD student at the <strong>University of Maryland</strong> in the Parallel Software and Systems Group. My research focuses on collective communication and high-performance systems for sparse and irregular problems.</p>
+        <div class="hero-actions">
+          <a class="cyber-button" href="{{ base_path }}/publications/">View publications <span aria-hidden="true">↗</span></a>
+          <a class="cyber-button cyber-button--ghost" href="https://github.com/{{ site.author.github }}">GitHub</a>
+        </div>
+      </div>
+
+      <aside class="hero-console reveal" aria-label="Researcher profile">
+        <div class="console-bar"><span>PROFILE</span></div>
+        <div class="portrait-frame"><img src="{{ base_path }}/images/hough.png" alt="Portrait of Dalton Hough"></div>
+        <dl class="console-readout">
+          <dt>Affiliation</dt><dd>UMD // CS</dd>
+          <dt>Research group</dt><dd>PSSG</dd>
+          <dt>Location</dt><dd>College Park</dd>
+        </dl>
+        <div class="console-links">
+          <a href="mailto:ldhough@cs.umd.edu"><span>Email</span><strong>(@ ldhough (. cs umd edu))</strong></a>
+          <a href="{{ site.author.googlescholar }}"><span>Research</span><strong>Google Scholar</strong></a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="home-section reveal" aria-labelledby="research-heading">
+      <div class="section-heading">
+        <h2 id="research-heading">Research areas</h2>
+      </div>
+      <div class="research-grid">
+        <article class="research-card" data-index="01"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M7.3 11 16.6 7M7.3 13l9.3 4"/></svg></span><h3>Collective communication</h3><p>Developing high-performance collective communication on GPU platforms.</p></article>
+        <article class="research-card" data-index="02"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg></span><h3>Sparse &amp; irregular problems</h3><p>Developing efficient representations and algorithms for workloads with irregular structure.</p></article>
+        <article class="research-card" data-index="03"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3v17h17"/><path d="m6 16 4-5 4 2 5-7"/><circle cx="6" cy="16" r="1"/><circle cx="10" cy="11" r="1"/><circle cx="14" cy="13" r="1"/><circle cx="19" cy="6" r="1"/></svg></span><h3>Performance analysis</h3><p>Understanding bottlenecks and scaling behavior in distributed ML workloads.</p></article>
+      </div>
+    </section>
+
+    <section class="home-section reveal" aria-labelledby="work-heading">
+      <div class="section-heading">
+        <h2 id="work-heading">Selected publications</h2>
+      </div>
+      <div class="project-stack">
+        {% assign featured = site.publications | where: "featured", true | sort: "date" | reverse %}
+        {% for post in featured %}
+          <a class="project-card" href="{{ base_path }}{{ post.url }}">
+            <span class="project-year"><span>{{ post.shortvenue }}</span><span>{{ post.date | date: "%Y" }}</span></span>
+            <span>
+              <h3>{{ post.title }}</h3>
+              {% if post.authors %}
+                <p class="project-authors">
+                  {% for author in post.authors %}{% unless forloop.first %}, {% endunless %}<span{% if author == "Lannie Dalton Hough" %} class="is-me"{% endif %}>{{ author }}</span>{% endfor %}
+                </p>
+              {% endif %}
+              <p>{{ post.excerpt }}</p>
+            </span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="home-section reveal" aria-labelledby="about-heading">
+      <div class="about-grid">
+        <div><span class="about-label">Background</span><h3 id="about-heading">About me</h3></div>
+        <div class="about-copy">{{ content }}</div>
+      </div>
+      <div class="status-line"><span>Lannie Dalton Hough</span><span>University of Maryland</span><span id="system-clock">EST // --:--:--</span></div>
+    </section>
+  </div>
+</main>

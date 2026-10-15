@@ -52,7 +52,15 @@
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
     
-    {% if post.citation and post.paperurl and post.slidesurl %}
+    {% if post.collection == 'publications' %}
+      {% if post.paperurl or post.bibtex %}
+        <p>
+          {% if post.paperurl %}<a href="{{ post.paperurl }}">Download Paper</a>{% endif %}
+          {% if post.paperurl and post.bibtex %} | {% endif %}
+          {% if post.bibtex %}<a href="{{ base_path }}{{ post.url }}#bibtex">BibTeX</a>{% endif %}
+        </p>
+      {% endif %}
+    {% elsif post.citation and post.paperurl and post.slidesurl %}
       <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.citation and post.paperurl %}
       <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
